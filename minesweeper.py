@@ -267,4 +267,10 @@ class MinesweeperAI():
             1) have not already been chosen, and
             2) are not known to be mines
         """
-       
+        for i in range(0, self.height):
+            for j in range(0, self.width):
+                if (i, j) not in self.moves_made:
+                    if(i, j) not in self.mines:
+                        return (i, j)
+        return None
+        raise NotImplementedError
